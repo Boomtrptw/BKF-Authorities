@@ -1,0 +1,142 @@
+.wh-75-35 {
+  width: 75px;
+  height: 35px;
+}
+.img-profile {
+  width: 70px;
+  height: 70px;
+  padding: 10px;
+}
+.img-icon {
+  width: 25px;
+  margin-right: 5px;
+}
+.group-upload-file {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.button-upload-file {
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.text-gray {
+  color: rgba(173, 173, 173, 1);
+}
+.group-input-col-4 {
+  margin-top: 10px;
+  justify-content: space-around;
+}
+.group-input-lable {
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+}
+.title-lable {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(132, 162, 180, 1);
+}
+.text-span-status {
+  color: rgba(64, 93, 109, 1);
+}
+.text-span-option {
+  color: rgba(132, 162, 180, 1);
+  font-weight: 400;
+}
+.disabled-group {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.text-require {
+  color: rgba(255, 0, 0, 1);
+}
+.bd-input {
+  border: 1px solid rgba(216, 230, 238, 1);
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+  height: 36px;
+}
+.bd-input:disabled {
+  background-color: #e9ecef;
+  color: #495057;
+  border-color: #ced4da;
+}
+.border-layer {
+  border: 1px solid rgba(216, 230, 238, 1);
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.group-input-radio {
+  margin-top: 5px;
+}
+.react-select__control {
+  border: 1px solid #cdddeb;
+  border-radius: 6px;
+  min-height: 35px;
+  font-size: 14px;
+  color: #4a4a4a;
+  box-shadow: none;
+}
+
+.react-select__control--is-focused {
+  border-color: #80bdff;
+  box-shadow: none;
+}
+
+.react-select__placeholder {
+  color: #adb5bd;
+}
+
+.react-select__single-value {
+  color: #495057;
+}
+.table-shadow {
+  box-shadow: 0px 0px 2px 1px rgba(132, 162, 180, 0.25);
+}
+.text-title-table {
+  color: rgba(102, 112, 133, 1) !important;
+  font-size: 14px;
+  font-weight: 400;
+}
+.bg-header-tr {
+  background-color: rgba(209, 217, 221, 1) !important;
+  border-bottom: 3px solid #fff;
+}
+.bg-header-td {
+  background-color: rgba(223, 230, 234, 1) !important;
+  border-bottom: 3px solid #fff;
+}
+.bd-right {
+  border-right: 1px solid rgba(102, 112, 133, 1) !important;
+}
+.cspt {
+  cursor: pointer;
+}
+.icon-action {
+  width: 20px;
+  height: 20px;
+}
+.icon-action-table {
+  width: 30px;
+  height: 30px;
+}
+.checkbox-custom {
+  accent-color: rgba(71, 85, 105, 1);
+}
+.bt-add-modules {
+  color: rgba(2, 132, 199, 1) !important;
+  background-color: rgba(225, 241, 248, 1) !important;
+  border: 1.5px dashed rgba(2, 132, 199, 1) !important;
+  border-radius: 5px;
+}
+.bt-add-func {
+  color: rgba(2, 132, 199, 1);
+  background-color: rgba(225, 241, 248, 1);
+  border: 1.5px dotted rgba(2, 132, 199, 1);
+  border-radius: 5px;
+}

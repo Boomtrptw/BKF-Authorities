@@ -1,0 +1,275 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  background-image: linear-gradient(to right, #164E63, rgba(45, 158, 201, 0.9));
+  z-index: 10;
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 20px;
+    height: 75px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    h1 {
+      color: #FFFFFF;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 42px;
+      span {
+        margin-left: 10px;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 36px;
+      }
+    }
+    .company-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      img {
+        width: 48px;
+        border-radius: 50%;
+      }
+    }
+    .menu-toggle {
+      display: none;
+      width: 24px;
+      height: 24px;
+      img {
+        max-width: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    .dropdown-header {
+      .notification-warning {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 8px;
+        height: 8px;
+        background-color: #DC2626;
+        border-radius: 50%;
+      }
+      .dropdown-content {
+        display: block;
+        position: absolute;
+        padding: 5px 0;
+        width: 230px;
+        background-color: #ffffff;
+        border-radius: 3px;
+        box-shadow: 0 0 4px rgba(132, 162, 180, 0.5);
+        opacity: 1;
+        z-index: 10;
+        &.bookmark-content {
+          right: 0;
+          margin-top: 18px;
+          .bookmark-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 5px 10px 10px;
+            color: #475569;
+            border-bottom: 1px solid #e5e7eb;
+          }
+          .bookmark-body {
+            max-height: 320px;
+            overflow-y: auto;
+            ul {
+              margin: 0;
+              padding: 0;
+              li {
+                border-bottom: 1px solid #e5e7eb;
+                &:last-child {
+                  border-bottom: 0;
+                }
+                a {
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  padding: 10px;
+                  width: 100%;
+                  color: #475569;
+                  font-size: 12px;
+                  text-decoration: none;
+                  &:hover {
+                    background-color: #D1D9DD;
+                  }
+                }
+              }
+            }
+          }
+          .bookmark-foot {
+            padding: 10px 10px 5px;
+            border-top: 1px solid #e5e7eb;
+          }
+        }
+        &.notification-content {
+          right: 0;
+          margin-top: 18px;
+          .notification-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 5px 10px 10px;
+            color: #475569;
+            border-bottom: 1px solid #e5e7eb;
+            .notification-count {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 20px;
+              height: 20px;
+              color: #ffffff;
+              font-size: 12px;
+              background-color: #DC2626;
+              border-radius: 50%;
+            }
+          }
+          .notification-body {
+            max-height: 320px;
+            overflow-y: auto;
+            ul {
+              margin: 0;
+              padding: 0;
+              li {
+                border-bottom: 1px solid #e5e7eb;
+                &:last-child {
+                  border-bottom: 0;
+                }
+                a {
+                  display: flex;
+                  gap: 10px;
+                  padding: 10px;
+                  text-decoration: none;
+                  &:hover {
+                    background-color: #D1D9DD;
+                  }
+                  p {
+                    margin-bottom: 1px;
+                    color: #475569;
+                    font-size: 12px;
+                  }
+                  small {
+                    color: #6E84A3;
+                    font-size: 10px;
+                  }
+                }
+              }
+              .notification-photo {
+                width: 30px;
+                height: 30px;
+                img {
+                  width: 100%;
+                  border-radius: 50%;
+                  border: 1px solid #e5e7eb;
+                }
+              }
+            }
+          }
+          .notification-foot {
+            padding: 10px 10px 5px;
+            border-top: 1px solid #e5e7eb;
+          }
+        }
+        &.user-content {
+          list-style: none;
+          right: 0;
+          margin-top: 10px;
+          li {
+            padding: 5px 10px;
+            color: #475569;
+            cursor: pointer;
+            &:hover {
+              background-color: #D1D9DD;
+            }
+            &.no-bg {
+              cursor: default;
+              &:hover {
+                background-color: transparent;
+              }
+            }
+            a {
+              display: block;
+              color: #475569;
+              text-decoration: none;
+            }
+            .menu-language {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 10px;
+              .switch-language {
+                display: flex;
+              }
+            }
+          }
+        }
+      }
+    }
+    .header-user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      .user-photo {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header {
+    .header-left {
+      gap: 10px;
+      h1 {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+    .header-right {
+      .header-user {
+        gap: 4px;
+        .user-info {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .header {
+    .header-right {
+      .dropdown-header {
+        .dropdown-content {
+          &.bookmark-content {
+            right: -116px;
+          }
+          &.notification-content {
+            right: -80px;
+          }
+        }
+      }
+    }
+  }
+}

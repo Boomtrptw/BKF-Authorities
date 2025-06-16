@@ -1,0 +1,162 @@
+/* margin */
+.mt-5 {
+  margin-top: 5px !important;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-15 {
+  margin-top: 15px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-25 {
+  margin-top: 25px;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mb-2 {
+  margin-bottom: 2px !important;
+}
+.mb-15 {
+  margin-bottom: 15px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.ml-4 {
+  margin-left: 4px !important;
+}
+.mr-15 {
+  margin-right: 15px;
+}
+.mx-4 {
+  margin-left: 4px !important;
+  margin-right: 4px !important;
+}
+.my-8 {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}
+
+/* padding */
+.pl-8 {
+  padding-left: 8px;
+}
+.pr-7 {
+  padding-right: 7px;
+}
+
+/* gap */
+.no-gap {
+  gap: 0;
+}
+.gap-5 {
+  gap: 5px !important;
+}
+.gap-10 {
+  gap: 10px;
+}
+.gap-15 {
+  gap: 15px;
+}
+
+/* width */
+.w-full {
+  width: 100%;
+}
+.w-26 {
+  width: 26px;
+}
+.min-w-1024 {
+  min-width: 1024px;
+}
+.min-w-1199 {
+  min-width: 1199px;
+}
+.min-w-1280 {
+  min-width: 1280px;
+}
+
+/* font */
+.font-bold {
+  font-weight: bold;
+}
+.font-normal {
+  font-weight: 400;
+}
+.font-medium {
+  font-weight: 500;
+}
+.font-semibold {
+  font-weight: 600;
+}
+
+/* text-size */
+.text-xs {
+  font-size: 12px !important;
+}
+.text-base {
+  font-size: 16px;
+}
+.text-xl {
+  font-size: 20px;
+}
+.text-2xl {
+  font-size: 24px;
+}
+
+/* text color */
+.text-white {
+  color: #FFFFFF;
+}
+.text-red {
+  color: #FF0000;
+}
+.text-yellow {
+  color: #FBBF24;
+}
+.text-error {
+  color: #F24822;
+}
+.text-success {
+  color: #16A34A;
+}
+.text-code {
+  color: #C4D2DA;
+}
+
+/* input text */
+.input-error {
+  color: #1B435D;
+  border: 1px solid #F24822;
+  outline: none;
+  & + svg {
+    color: #F24822;
+  }
+}
+.login-input-text:disabled {
+  background-color: #E5E7EB;
+  border: 1px solid #E5E7EB;
+}
+
+/* border */
+.no-border-bottom {
+  border-bottom: 0 !important;
+}
+.border-divider {
+  margin: 20px 0;
+  border-top: 2px solid #D8E6EE;
+}
+
+/* overflow */
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+/* cursor */
+.cursor-pointer {
+  cursor: pointer;
+}
