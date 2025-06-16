@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 export const Dashboard = () => {
   const [dataList, setDataList] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:8080/syetem/get-bkf-system-all/');
+        const response = await fetch(
+          "http://127.0.0.1:8080/syetem/get-bkf-system-all/"
+        );
         const data = await response.json();
         setDataList(data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
 
@@ -25,11 +27,11 @@ export const Dashboard = () => {
         padding: "20px",
         backgroundColor: "#FFF",
         borderRadius: "10px",
-        justifyContent: "space-evenly",
       }}
     >
       {dataList.map((item) => (
         <a
+          title={item.name}
           key={item.id}
           href={item.url}
           target="_blank"
@@ -48,22 +50,50 @@ export const Dashboard = () => {
             cursor: "pointer",
           }}
         >
-          <div style={{ width: "50px" }}>
-            <img
-              src={item.image_url}
-              alt={item.name}
-              style={{
-                width: "100%",
-                height: "auto",
-                borderRadius: "4px",
-              }}
-            />
+          <div
+            style={{
+              width: "50px",
+              height: "50px",
+              display: "flex",
+              justifyContent: "center",
+              justifyItems: "center",
+              alignItems: "center",
+            }}
+          >
+            {item.image_url ? (
+              <img
+                src={item.image_url}
+                alt={item.name}
+                onError={(e) => {
+                  e.target.style.display = "none";
+                }}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "4px",
+                }}
+              />
+            ) : (
+              <div
+                style={{
+                  width: "50px",
+                  height: "50px",
+                  backgroundColor: "#f0f0f0",
+                  borderRadius: "4px",
+                }}
+              />
+            )}
           </div>
           <span
             style={{
               marginLeft: "20px",
               fontSize: "16px",
               fontWeight: "500",
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              maxWidth: "250px",
+              display: "inline-block",
             }}
           >
             {item.name}
