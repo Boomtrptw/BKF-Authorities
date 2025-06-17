@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 export const Dashboard = () => {
   const [dataList, setDataList] = useState([]);
+  const apiUrl = import.meta.env.VITE_URL_API;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://127.0.0.1:8080/syetem/get-bkf-system-all/"
+          `${apiUrl}/syetem/get-bkf-system-all/`
         );
         const data = await response.json();
         setDataList(data);
