@@ -21,7 +21,6 @@ const Login = () => {
   const [isShowPassword, setIsShowPassword] = useState({
     password: false,
   });
-  // const isVerifyAuthentication = true;
 
   const handleShowPassword = (field) => {
     setIsShowPassword((prev) => ({
@@ -35,9 +34,10 @@ const Login = () => {
       const response = await axios.get(
         `${apiAdUrl}?username=${data.username}&password=${data.password}`
       );
+      const user_data = response.data;
 
-      if (response.data.resultstatus === true) {
-        setAuthUser(response.data);
+      if (user_data.resultstatus === true) {
+        setAuthUser(user_data);
         showAlertAfterConfirm("Success!", "", () => {
           navigate("/dashboard");
         });
@@ -115,8 +115,6 @@ const Login = () => {
           </button>
         </div>
       </form>
-      {/* { isTwoFactorRegister && <TwoFactorAuthentication /> } */}
-      {/* { isTwoFactorVerify && <VerifyAuthentication /> } */}
     </>
   );
 };

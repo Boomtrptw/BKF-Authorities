@@ -5,17 +5,19 @@ import { IoIosStar } from "react-icons/io";
 import { FaBell } from "react-icons/fa6";
 import { MdArrowDropDown } from "react-icons/md";
 import { IoStar } from "react-icons/io5";
-import { bookmark, notification } from "../../../data/header";
+// import { bookmark, notification } from "../../../data/header";
 import Logo from "../../../assets/images/logo-vri.png";
 // import UserPhoto from "../../../assets/images/user-photo.png";
 import IconHamburger from "../../../assets/icons/icon-hamburger.png";
+import IconSearch from "../../../assets/icons/icon-search.png";
 import FlagEN from "../../../assets/images/flag-en.jpg";
 import FlagTH from "../../../assets/images/flag-th.jpg";
 import { useNavigate } from "react-router-dom";
 import { removeAuthUser, getAuthUser } from "../../../context/authCookie";
 
-const Header = () => {
+const Header = ({ setSearchText }) => {
   const navigate = useNavigate();
+  const [showInput, setShowInput] = useState(false);
 
   const { showSidebarMenu, setShowSidebarMenu } = useGlobalContext();
 
@@ -36,6 +38,13 @@ const Header = () => {
     navigate("/");
   };
 
+  const handleClick = () => {
+    setShowInput((prev) => !prev);
+    if (showInput) {
+      setSearchText("");
+    }
+  };
+
   return (
     <div className="header">
       <div className="header-container">
@@ -52,9 +61,30 @@ const Header = () => {
           </div>
         </div>
         <div className="header-right">
+          {showInput && (
+            <input
+              type="text"
+              style={{
+                borderRadius: "3px",
+                padding: "5px",
+                width: "200px",
+                height: "30px",
+                border: "none",
+                outline: "none",
+              }}
+              placeholder="Search..."
+              onChange={(e) => setSearchText(e.target.value)}
+            />
+          )}
+          <img
+            src={IconSearch}
+            alt="Search"
+            onClick={handleClick}
+            style={{ cursor: "pointer" }}
+          />
           {/* <HiSearch className="text-white text-2xl cursor-pointer" /> */}
 
-          <div className="dropdown dropdown-header">
+          {/* <div className="dropdown dropdown-header">
             <div
               className="cursor-pointer"
               onClick={() => toggleDropdown("bookmark")}
@@ -79,9 +109,9 @@ const Header = () => {
                 </div>
               </div>
             )}
-          </div>
+          </div> */}
 
-          <div className="dropdown dropdown-header">
+          {/* <div className="dropdown dropdown-header">
             <div
               className="relative cursor-pointer"
               onClick={() => toggleDropdown("notification")}
@@ -122,7 +152,7 @@ const Header = () => {
                 </div>
               </div>
             )}
-          </div>
+          </div> */}
 
           <div className="dropdown dropdown-header">
             <div
@@ -136,15 +166,17 @@ const Header = () => {
                 <p className="text-white text-sm font-semibold mb-2">
                   {user?.username}
                 </p>
-                <p className="text-white text-xs mb-0">{user?.departmentname}</p>
+                <p className="text-white text-xs mb-0">
+                  {user?.departmentname}
+                </p>
               </div>
               <MdArrowDropDown className="text-white text-2xl" />
             </div>
             {openDropdown === "userMenu" && (
               <ul className="dropdown-content user-content">
-                <li>
+                {/* <li>
                   <Link to="">User Profile</Link>
-                </li>
+                </li> */}
                 <li className="no-bg">
                   <div className="menu-language">
                     Language
