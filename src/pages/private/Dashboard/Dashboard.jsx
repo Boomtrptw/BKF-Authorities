@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-export const Dashboard = ({ searchText }) => {
+import { useOutletContext } from "react-router-dom";
+export const Dashboard = () => {
+  const { searchText } = useOutletContext();
   const [dataList, setDataList] = useState([]);
   const apiUrl = import.meta.env.VITE_URL_API;
 

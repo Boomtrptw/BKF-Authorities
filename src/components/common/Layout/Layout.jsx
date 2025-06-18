@@ -1,9 +1,9 @@
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import clsx from "clsx";
-import { Dashboard } from "../../../pages/private/Dashboard/Dashboard";
 
 const Layout = () => {
   const { showLayoutBackdrop } = useGlobalContext();
@@ -14,7 +14,7 @@ const Layout = () => {
       <Header setSearchText={setSearchText} />
       <div className="layout-container">
         <div className="main-container">
-          <Dashboard searchText={searchText} />
+          <Outlet context={{ searchText }} />
           <Footer />
         </div>
       </div>

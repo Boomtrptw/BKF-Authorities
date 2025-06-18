@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-import axios from "axios";
 import { useGlobalContext } from "../../../context/GlobalContext";
 import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
@@ -31,10 +29,21 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.get(
-        `${apiAdUrl}?username=${data.username}&password=${data.password}`
-      );
-      const user_data = response.data;
+      const apiUrl = `${apiAdUrl}?username=${data.username}&password=${data.password}`;
+      const response = await fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+   
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+   
+      const user_login = await response.json();
+   
+      const user_data = user_login;
 
       if (user_data.resultstatus === true) {
         setAuthUser(user_data);
@@ -94,20 +103,6 @@ const Login = () => {
               />
             )}
           </div>
-        </div>
-        <div className="mt-5 d-flex justify-content-between">
-          <Link
-            to="change-password"
-            className="text-yellow text-xs text-decoration-none"
-          >
-            Change Password
-          </Link>
-          <Link
-            to="forgot-password"
-            className="text-yellow text-xs text-decoration-none"
-          >
-            Forgot your Password?
-          </Link>
         </div>
         <div className="d-flex flex-column gap-15 mt-25">
           <button type="submit" className="login-button-primary">

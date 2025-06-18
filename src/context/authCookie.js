@@ -1,8 +1,12 @@
 import Cookies from "js-cookie";
 
-const COOKIE_KEY = "auth_user";
+const COOKIE_KEY = "cookieLogin";
 
 export const apiAdUrl = `https://api.bkf.co.th/API_GatewayUMS_Global/ADAuthentication`;
+
+export const isAuthenticated = () => {
+  return !!Cookies.get(COOKIE_KEY);
+};
 
 export const setAuthUser = (user) => {
   Cookies.set(COOKIE_KEY, JSON.stringify(user), { expires: 7 }); // 7 วัน
